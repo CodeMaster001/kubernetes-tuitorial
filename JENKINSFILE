@@ -2,9 +2,9 @@ node {
   stage('HelloWorld') {
     sh "echo \$(ls)"
     sh "pwd"
-    sh "cd test && kubectl apply -f . --context minikube"
+    sh "cd test && kubectl apply  --context minikube -f ."
     sh "pwd"
-    sh "kubectl apply -f redis.yaml"
+    sh "kubectl apply --context minikube -f redis.yaml"
 
   }
 
