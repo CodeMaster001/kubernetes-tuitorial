@@ -1,7 +1,11 @@
 node {
-  stage('deploy') {
+  stage('HelloWorld') {
     sh '''
-        kubectl apply -f
-        ''' .
+    kubectl apply -f
+    ''' .
+  }
+
+  stage('git clone') {
+    git clone "ssh://git@mywebsite.example/myrepo.git"
   }
 }
