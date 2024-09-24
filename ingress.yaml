@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-service
+  namespace: prajay-gl
+  annotations:
+   ingressClassName: nginx  
+   nginx.ingress.kubernetes.io/rewrite-target: /    
+spec:
+  tls:
+  - hosts:
+    - prajay.example.com
+    secretName: tls-secret
+
+  rules:
+  - host:  "prajay.example.com"
+    http:
+      paths:
+      - path: /guest
+        pathType: Prefix
+        backend:
+          service: 
+            name: guestbookservice
+            port: 
+              number: 8080
+      - path: /php
+        pathType: Prefix
+        backend:
+          service: 
+            name: phpmyadminservice
+            port: 
+              number: 8080

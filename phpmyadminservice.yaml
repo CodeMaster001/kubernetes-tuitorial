@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: phpservice
+  name: phpmyadminservice
+  namespace: prajay-gl
+spec:
+  selector:
+      app: php
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+    protocol: TCP
+    nodePort: 32762
+  type: NodePort

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2024-09-19T12:42:17Z"
+  labels:
+    app: guestbookservice
+  name: guestbookservice
+  namespace: prajay-gl
+spec:
+  selector:
+      app: guestbook
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+    nodePort: 32760
+  type: NodePort
+  sessionAffinity: None

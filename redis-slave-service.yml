@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: redis-slave
+  name: redis-slave
+  namespace: prajay-gl
+spec:
+  selector:
+      app: redis-slave
+  ports:
+  - name: 80-8080
+    port: 6379
+    targetPort: 6379
+    protocol: TCP
+  type:
+    ClusterIP
+  sessionAffinity: None
+  
