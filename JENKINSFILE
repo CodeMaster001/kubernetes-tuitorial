@@ -1,7 +1,7 @@
 node {
   stage('HelloWorld') {
     sh "cd .."
-    sh "echo $(ls)"
+    sh "echo \$(ls)"
     sh "kubectl apply -f redis.yaml"
   }
 
