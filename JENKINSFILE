@@ -2,7 +2,7 @@ node {
   stage('HelloWorld') {
     sh "echo \$(ls)"
     sh "pwd"
-    sh "cd .. && kubectl apply -f redis.yaml"
+    sh "cd test && kubectl apply -f ."
     sh "pwd"
     sh "kubectl apply -f redis.yaml"
 
