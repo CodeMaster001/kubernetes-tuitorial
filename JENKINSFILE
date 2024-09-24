@@ -1,5 +1,7 @@
 node {
   stage('HelloWorld') {
     echo 'Hello World'
+    ls
+    kubectl apply -f .
   }
 }
