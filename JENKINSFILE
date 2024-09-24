@@ -1,5 +1,6 @@
 node {
   stage('HelloWorld') {
+    sh "ls"
     sh "kubectl apply -f ."
   }
 }
