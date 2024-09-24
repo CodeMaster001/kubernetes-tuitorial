@@ -1,11 +1,7 @@
 node {
-  stage('HelloWorld') {
-    echo 'Hello World'
-  }
-  stage('ls') {
-    ls
-  }
   stage('deploy') {
-    kubectl apply -f .
+    sh '''
+        kubectl apply -f
+        ''' .
   }
 }
