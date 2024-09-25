@@ -1,9 +1,0 @@
-node {
-  stage('HelloWorld') {
-    sh "echo \$(ls)"
-    sh "cd test && kubectl apply  --context minikube -f ."
-    sh "kubectl apply --context minikube -f redis.yaml"
-
-  }
-
-}
